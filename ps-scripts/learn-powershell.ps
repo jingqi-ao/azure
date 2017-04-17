@@ -1,0 +1,27 @@
+# Display all available commands
+Get-Command
+
+# Get help info about command
+Get-Help Get-Service
+Get-Help Get-Service -Examples
+
+# Query alias
+Get-Alias
+Get-Alias cls
+
+# Get members of an object
+Get-Process -Name vmplayer | Get-Member
+
+# Select properties of an object
+Get-Process -Name vmplayer | Select-Object *
+
+# Assign result to a variable and display the variable
+$vmpalyerProcess = Get-Process -Name vmplayer
+$vmpalyerProcess
+$vmpalyerProcess.Name
+
+# Manipulate objects
+Get-PSDrive | 
+Where-Object {$_.Free -gt 1} | 
+Select-Object Root, Used, Free |
+ForEach-Object { Write-Host "Free space for " $_.Root "is" $_.Free }
