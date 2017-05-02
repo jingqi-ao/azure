@@ -1,9 +1,16 @@
 # Display all available commands
 Get-Command
+Get-Command *eventlog
 
 # Get help info about command
 Get-Help Get-Service
 Get-Help Get-Service -Examples
+
+# Comma-separated lists
+Get-Process -Name chrome,vmplayer
+
+# Parenthetical commands
+Get-ChildItem (Write-Output "C:\")
 
 # Query alias
 Get-Alias
